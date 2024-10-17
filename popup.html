@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Auto Login</h1>
+  
+  <form id="loginForm">
+    <label for="siteSelector">Select Site:</label>
+    <select id="siteSelector">
+      <option value="lms">LMS (Moodle)</option>
+      <option value="polli">Polli (QIS)</option>
+      <option value="bhtMicrosoft">BHT Microsoft (Teams/Office)</option>
+      <option value="bhtZoom">BHT Zoom</option>
+      <option value="bhtWebMail">BHT WebMail</option>
+    </select>
+    
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Enter password" required>
+
+    <button type="submit">Save Credentials</button>
+  </form>
+
+  <button id="autoLoginButton">Auto-Fill and Login</button>
+
+  <!-- <h2>Saved Credentials:</h2>
+  <div id="savedCredentials"></div> -->
+
+  <h2>Saved Credentials:</h2>
+  <button id="toggleCredentials">Show Credentials</button>
+  <div id="savedCredentials" style="display: none;"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Multi-Site Auto Login",
+  "version": "2.1",
+  "description": "A Chrome extension to auto-fill login forms and login to multiple websites.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://lms.bht-berlin.de/login/index.php",
+        "https://polli.bht-berlin.de/qisserver/pages/cs/sys/portal/hisinoneStartPage.faces",
+        "https://teams.microsoft.com/*",
+        "https://login.microsoftonline.com/*",
+        "https://login.bht-berlin.de/*",
+        "https://bht-berlin-de.zoom.us/",
+        "https://webmail.bht-berlin.de/"
+      ],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
